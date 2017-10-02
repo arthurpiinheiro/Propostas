@@ -10,10 +10,14 @@ import {LoginModule} from './login/login.module';
 import {PropostaModule} from './proposta/proposta.module';
 import {HomeModule} from './home/home.module';
 import {PaginaNaoEncontradaModule} from './pagina-nao-encontrada/pagina-nao-encontrada.module';
+import {ComponentsModule} from './components/components.module';
+import {DirectiveModule} from './directives/directive.module';
+import {CpfDirective} from './directives/cpf.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CpfDirective
   ],
   imports: [
     BrowserModule,
@@ -24,9 +28,11 @@ import {PaginaNaoEncontradaModule} from './pagina-nao-encontrada/pagina-nao-enco
     PropostaModule,
     HomeModule,
     PaginaNaoEncontradaModule,
+    ComponentsModule,
     MdButtonModule,
     MdInputModule,
-    MdSelectModule
+    MdSelectModule,
+    DirectiveModule
   ],
   providers: [],
   bootstrap: [AppComponent]

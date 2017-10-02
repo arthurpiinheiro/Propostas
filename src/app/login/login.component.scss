@@ -1,0 +1,11 @@
+@import "../../app/styles/_default";
+@import "../../app/styles/_variables";
+
+.login-component {
+  @extend .max-width-height;
+  @extend .vertical-horizontal-align;
+  .content-form {
+    background: white;
+    padding: 50px 35px 30px 35px;
+  }
+}

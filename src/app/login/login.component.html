@@ -1,23 +1,11 @@
-<div>
-  <h1>Component login
-  </h1>
-</div>
-<!--<div *ngIf="formExample">-->
-  <!--<form [formGroup]="formExample">-->
-    <!--<md-form-field class="example-full-width group">-->
-      <!--<input mdInput placeholder="Email" [formControl]="formExample.get('email')">-->
-      <!--<md-error *ngIf="formExample.get('email').hasError('pattern')">-->
-        <!--Please enter a valid email address-->
-      <!--</md-error>-->
-      <!--<md-error *ngIf="formExample.get('email').hasError('required')">-->
-        <!--Email is <strong>required</strong>-->
-      <!--</md-error>-->
-    <!--</md-form-field>-->
+<div class="login-component">
+  <div class="content-form">
+    <h2 class="title">Login</h2>
+    <p class="sub-title">Acesse o sistema de propostas e contratos.</p>
 
-    <!--<md-select placeholder="Favorite food">-->
-      <!--<md-option *ngFor="let food of foods" [value]="food.value">-->
-        <!--{{ food.viewValue }}-->
-      <!--</md-option>-->
-    <!--</md-select>-->
-    <!--<button md-button>Click me!</button>-->
-  <!--</form>-->
+    <form [formGroup]="formLogin" (ngSubmit)="login(formLogin.value)">
+      <app-cpf [form]="formLogin"></app-cpf>
+      <button md-button [disabled]="!formLogin.valid">entrar</button>
+    </form>
+  </div>
+</div>
