@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -17,10 +17,24 @@ export class LoginComponent implements OnInit {
   }
 
   createForm() {
-    this.formLogin = this.formBuilder.group({});
+    this.formLogin = this.formBuilder.group({
+      'senha': [null, this.minLength(6)]
+    });
   }
 
   login(form) {
     console.log(form);
+  }
+
+  minLength(minimum) {
+    return function (input) {
+      if (input.value && input.value.length >= minimum) {
+        return null;
+      } else if (!input.value) {
+        return {'required': true};
+      } else {
+        return {'minLength': true};
+      }
+    };
   }
 }
