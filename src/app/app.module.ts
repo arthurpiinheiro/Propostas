@@ -3,24 +3,32 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdInputModule, MdSelectModule} from '@angular/material';
+import {
+  MD_PLACEHOLDER_GLOBAL_OPTIONS, MdButtonModule, MdInputModule, MdSelectModule,
+  MdTooltipModule
+} from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app.routing.module';
 import {PropostaModule} from './proposta/proposta.module';
 import {HomeModule} from './home/home.module';
 import {PaginaNaoEncontradaModule} from './pagina-nao-encontrada/pagina-nao-encontrada.module';
-import {ComponentsModule} from './components/components.module';
 import {DirectiveModule} from './directives/directive.module';
 import {LoginComponent} from './login/login.component';
-import {CpfComponent} from './components/cpf/cpf.component';
+import {CpfComponent} from './components/form/cpf/cpf.component';
 import {CpfDirective} from './directives/cpf.directive';
+import {ErrorsComponent} from './components/form/errors/errors.component';
+import {InputsComponent} from './components/form/inputs/inputs.component';
+import {BtnSubmitComponent} from './components/form/btn-submit/btn-submit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CpfComponent,
-    CpfDirective
+    CpfDirective,
+    ErrorsComponent,
+    InputsComponent,
+    BtnSubmitComponent
   ],
   imports: [
     BrowserModule,
@@ -30,13 +38,15 @@ import {CpfDirective} from './directives/cpf.directive';
     PropostaModule,
     HomeModule,
     PaginaNaoEncontradaModule,
-    ComponentsModule,
     MdButtonModule,
     MdInputModule,
     MdSelectModule,
-    DirectiveModule
+    DirectiveModule,
+    MdTooltipModule
   ],
-  providers: [],
+  providers: [
+    {provide: MD_PLACEHOLDER_GLOBAL_OPTIONS, useValue: {float: 'never'}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,21 @@
+@import "../../../styles/columns";
+@import "../../../styles/default";
+@import "../../../styles/variables";
+@import "../../../styles/forms";
+
+label {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+
+  &.label-required:after {
+    content: '*';
+    position: absolute;
+    right: -7px;
+    color: $color-danger;
+  }
+}
+
+

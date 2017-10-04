@@ -20,6 +20,5 @@ export class CpfDirective implements OnInit {
       str = str.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
       $event.target.value = str;
     }
-    console.log($event.target.value);
   }
 }

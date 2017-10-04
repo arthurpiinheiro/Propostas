@@ -1,28 +1,31 @@
 <div class="login-component">
   <div class="content-form">
-    <h2 class="title">Login</h2>
-    <p class="sub-title">Acesse o sistema de propostas e contratos.</p>
-
     <form [formGroup]="formLogin" (ngSubmit)="login(formLogin.value)" class="form" autocomplete="off">
-
-      <app-cpf class="grid-margin-b-10" [form]="formLogin"></app-cpf>
-
-      <md-form-field class="example-full-width group">
-        <input mdInput id="senha"
-               placeholder="Digite sua senha"
-               maxlength="16"
-               type="password"
-               [formControl]="formLogin.get('senha')">
-        <md-error *ngIf="formLogin.get('senha').hasError('required') && formLogin.get('senha').touched">
-          Senha é obrigatório
-        </md-error>
-        <md-error *ngIf="formLogin.get('senha').hasError('minLength')">
-          Digite no minimo 6 caracteres
-        </md-error>
-      </md-form-field>
-      <button md-button [disabled]="!formLogin.valid">entrar</button>
-      <div class="text-senha">
-        <a href="#">Esqueceu sua senha ?</a>
+      <div class="form-header">
+        <h2 class="title">Login</h2>
+        <p class="sub-title">Acesse o sistema de propostas e contratos.</p>
+      </div>
+      <div class="form-body">
+        <div class="form-group">
+          <app-cpf [form]="formLogin"></app-cpf>
+        </div>
+        <div class="form-group">
+          <app-inputs
+            [id]="'senha'"
+            [label]="'senha'"
+            [placeholder]="'Digite sua senha'"
+            [maxLength]="16"
+            [types]="'password'"
+            [control]="formLogin.get('senha')"
+          ></app-inputs>
+          <app-messages-errors [control]="formLogin.get('senha')"></app-messages-errors>
+        </div>
+      </div>
+      <div class="form-footer">
+        <app-btn-submit [form]="formLogin" [textBtn]="'entrar'"></app-btn-submit>
+        <div class="text-password">
+          <a href="#">Esqueceu sua senha ?</a>
+        </div>
       </div>
     </form>
   </div>

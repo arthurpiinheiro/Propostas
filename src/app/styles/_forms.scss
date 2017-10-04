@@ -1,11 +1,44 @@
-.mat-form-field {
-  width: auto;
+@import "_variables";
+
+.container-messages-errors {
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.content-form {
+  background: white;
+  padding: 50px 35px 30px 35px;
+
+  .form-header {
+    .title {
+      font-size: 24px;
+    }
+
+    .sub-title {
+      font-size: 16px;
+      color: #999;
+      margin-bottom: 20px;
+    }
+  }
+
+  .form-body {
+
+    .form-group {
+      position: relative;
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .form-footer {
+
+  }
 }
 
-.gray-text{
-  color: #999999;
+.mat-form-field-placeholder{
+  color: green;
 }
