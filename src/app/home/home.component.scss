@@ -1,0 +1,40 @@
+@import "../styles/variables";
+
+.container-home {
+  background: white;
+  height: 100%;
+
+  header {
+    max-width: 200px;
+    background-color: $color-background-default;
+    height: 100%;
+  }
+
+  .perfil {
+    padding: 10px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: grey;
+  }
+
+  nav ul li a {
+    padding: 20px 15px;
+    text-decoration: none;
+    display: block;
+    color: white;
+    position: relative;
+    &.active {
+      &:after {
+        content: ' ';
+        width: 3px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
+      }
+    }
+  }
+}

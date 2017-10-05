@@ -1,6 +1,7 @@
 <div class="login-component">
   <div class="content-form">
-    <form [formGroup]="formLogin" (ngSubmit)="login(formLogin.value)" class="form" autocomplete="off">
+    <form [formGroup]="formLogin" (ngSubmit)="formLogin.valid ? login(formLogin.value) : null" class="form"
+          autocomplete="off">
       <div class="form-header">
         <h2 class="title">Login</h2>
         <p class="sub-title">Acesse o sistema de propostas e contratos.</p>

@@ -25,8 +25,6 @@ export class BtnSubmitComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    console.log(this.form.valid);
-
   }
 
   confirmForm() {

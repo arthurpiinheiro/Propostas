@@ -19,6 +19,8 @@ import {CpfDirective} from './directives/cpf.directive';
 import {ErrorsComponent} from './components/form/errors/errors.component';
 import {InputsComponent} from './components/form/inputs/inputs.component';
 import {BtnSubmitComponent} from './components/form/btn-submit/btn-submit.component';
+import {LoginService} from './login/login.service';
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -42,10 +44,12 @@ import {BtnSubmitComponent} from './components/form/btn-submit/btn-submit.compon
     MdInputModule,
     MdSelectModule,
     DirectiveModule,
-    MdTooltipModule
+    MdTooltipModule,
+    HttpModule
   ],
   providers: [
-    {provide: MD_PLACEHOLDER_GLOBAL_OPTIONS, useValue: {float: 'never'}}
+    {provide: MD_PLACEHOLDER_GLOBAL_OPTIONS, useValue: {float: 'never'}},
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,15 +1,22 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {LoginService} from './login.service';
+import 'rxjs/add/operator/takeUntil';
+import {Subject} from 'rxjs/Subject';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   formLogin: FormGroup;
+  destroy$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private loginService: LoginService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -23,7 +30,10 @@ export class LoginComponent implements OnInit {
   }
 
   login(form) {
-    console.log(form);
+    if (form) {
+      console.log(form);
+      this.router.navigate(['/']);
+    }
   }
 
   minLength(minimum) {
@@ -36,5 +46,10 @@ export class LoginComponent implements OnInit {
         return {'minLength': true};
       }
     };
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }
