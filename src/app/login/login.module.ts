@@ -1,20 +1,25 @@
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
 import {LoginComponent} from './login.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {CpfComponent} from '../components/form/cpf/cpf.component';
-import {CpfDirective} from '../directives/cpf.directive';
+import {LoginService} from './login.service';
+import {ComponentsModule} from '../components/components.module';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   imports: [
-    CommonModule
-    // ReactiveFormsModule
+    ReactiveFormsModule,
+    ComponentsModule,
+    HttpModule
   ],
   declarations: [
-    // LoginComponent,
-    // CpfComponent,
-    // CpfDirective
+    LoginComponent
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  exports: [
+    LoginComponent
+  ],
+  providers: [
+    LoginService
+  ]
 })
-export class LoginModule { }
+export class LoginModule {
+}

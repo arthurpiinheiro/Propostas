@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, DoCheck, Input, OnInit} from '@angular/core';
+import {Component, DoCheck, Input, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 
 @Component({
