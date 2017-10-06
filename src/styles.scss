@@ -2,15 +2,4 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "app/styles/_default";
 @import "app/styles/_variables";
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Lato;
-}
-
-body, html {
-  @extend .max-width-height;
-}
-
+@import "app/styles/forms";

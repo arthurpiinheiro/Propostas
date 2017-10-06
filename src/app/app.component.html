@@ -1,10 +1,80 @@
-<div class="app-component">
-  <div class="index" *ngIf="isLoggin">
+<!--<div class="app-component">-->
+  <!--<div class="index" *ngIf="isLoggin">-->
+    <!--<nav>-->
+      <!--<a routerLink="/" routerLinkActive="active">Home</a>-->
+      <!--<a routerLink="/login" routerLinkActive="active">Login</a>-->
+      <!--<a routerLink="/proposta" routerLinkActive="active">proposta</a>-->
+    <!--</nav>-->
+  <!--</div>-->
+  <!--<router-outlet></router-outlet>-->
+<!--</div>-->
+
+<div class="container-home">
+  <header>
+    <div class="perfil">
+      <div class="info-perfil">
+        <h4>Arthur Adriano</h4>
+        <em>Diretor</em>
+      </div>
+      <img [src]="'http://images.wemystic.com.br/articles/850_400_homem-capri.jpg'" alt="Foto Perfil"
+           class="img-perfil"/>
+    </div>
     <nav>
-      <a routerLink="/" routerLinkActive="active">Home</a>
-      <a routerLink="/login" routerLinkActive="active">Login</a>
-      <a routerLink="/proposta" routerLinkActive="active">proposta</a>
+      <ul>
+        <li>
+          <a routerLink="/peril" routerLinkActive="active">Perfil</a>
+        </li>
+        <li>
+          <a routerLink="/propostas" routerLinkActive="active">Propostas</a>
+        </li>
+        <li>
+          <a routerLink="/contratos" routerLinkActive="active">Contratos</a>
+        </li>
+      </ul>
     </nav>
+  </header>
+
+  <div class="container-page">
+    <div class="page-header">
+      <div class="page-title">
+        <h2>Proposta</h2>
+        <em>Lorem ipsum dolor sit amet, consectetur</em>
+      </div>
+      <div class="btn-actions">
+        <div class="select-produtos">
+          <!--<mat-select #selectProd placeholder="Select">-->
+            <!--<mat-select-trigger>-->
+              <!--&lt;!&ndash;<div class="selected-value">&ndash;&gt;-->
+              <!--&lt;!&ndash;<span class="selected-value-icon">&lt;!&ndash;{{select.value?.icon}}&ndash;&gt; @</span>&ndash;&gt;-->
+              <!--&lt;!&ndash;<span class="selected-name">{{ select.value?.nome }}</span>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--{{ selectProd.value?.nome }}-->
+            <!--</mat-select-trigger>-->
+            <!--<mat-option *ngFor="let product of products" [(ngModel)]="selectedProduct" [value]="product">-->
+              <!--<span>{{ product.nome }}</span>-->
+            <!--</mat-option>-->
+          <!--</mat-select>-->
+        </div>
+
+        <div class="select-empresas">
+          <!--<mat-select #selectComp placeholder="Select">-->
+            <!--<mat-select-trigger>-->
+              <!--&lt;!&ndash;<div class="selected-value">&ndash;&gt;-->
+              <!--&lt;!&ndash;<span class="selected-value-icon">&lt;!&ndash;{{select.value?.icon}}&ndash;&gt; @</span>&ndash;&gt;-->
+              <!--&lt;!&ndash;<span class="selected-name">{{ select.value?.nome }}</span>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--{{ selectComp.value?.nome }}-->
+            <!--</mat-select-trigger>-->
+            <!--<mat-option *ngFor="let empresa of companys" [(ngModel)]="selectedCompany" [value]="empresa">-->
+              <!--<span>{{ empresa.nome }}</span>-->
+            <!--</mat-option>-->
+          <!--</mat-select>-->
+        </div>
+      </div>
+      <div class="logout">
+        <button>Logout</button>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
   </div>
-  <router-outlet></router-outlet>
 </div>

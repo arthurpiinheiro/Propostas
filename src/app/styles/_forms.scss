@@ -35,10 +35,20 @@
   }
 
   .form-footer {
-
   }
 }
 
-.mat-form-field-placeholder{
-  color: green;
+.btn-actions {
+  .mat-select-value {
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .mat-select-arrow {
+    color: white;
+  }
+}
+
+.mat-option-text {
+  padding: 0 20px;
 }

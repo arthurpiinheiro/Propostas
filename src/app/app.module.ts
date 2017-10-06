@@ -3,13 +3,13 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MAT_PLACEHOLDER_GLOBAL_OPTIONS} from '@angular/material';
+import {MAT_PLACEHOLDER_GLOBAL_OPTIONS, MatSelectModule} from '@angular/material';
 
 import {ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app.routing.module';
 import {PaginaNaoEncontradaModule} from './pagina-nao-encontrada/pagina-nao-encontrada.module';
-import {HomeModule} from './home/home.module';
 import {LoginModule} from './login/login.module';
+import {PropostaModule} from './proposta/proposta.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import {LoginModule} from './login/login.module';
     AppRoutingModule,
     LoginModule,
     PaginaNaoEncontradaModule,
-    HomeModule
+    PropostaModule,
+    MatSelectModule
   ],
   providers: [
     {
