@@ -3,6 +3,7 @@
 .container-home {
   background: white;
   height: 100%;
+  display: flex;
 
   header {
     max-width: 200px;
@@ -36,5 +37,10 @@
         background: white;
       }
     }
+  }
+
+  .container-home-modules {
+    width: 100%;
+    height: 100%;
   }
 }

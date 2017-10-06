@@ -6,10 +6,10 @@ import {FormGroup} from '@angular/forms';
   styleUrls: ['./btn-submit.component.scss'],
   template: `
     <button type="submit"
-            md-button
+            mat-button
             (mouseover)="confirmForm()"
             [ngClass]="{'btnDisabled': !form.valid}"
-            mdTooltip="{{textTooltip}}">{{textBtn}}
+            matTooltip="{{textTooltip}}">{{textBtn}}
     </button>
   `
 })

@@ -1,12 +1,1 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {HomeComponent} from './home.component';
-
-@NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [HomeComponent]
-})
-export class HomeModule {
-}
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';import {CommonModule} from '@angular/common';import {HomeComponent} from './home.component';import {RouterModule, Routes} from '@angular/router';import { PropostaComponent } from './proposta/proposta.component';const path: Routes = [{path: 'propostas', component: PropostaComponent}];@NgModule({  imports: [    CommonModule,    RouterModule.forChild(path)  ],  declarations: [HomeComponent, PropostaComponent],  schemas: [CUSTOM_ELEMENTS_SCHEMA]})export class HomeModule {}

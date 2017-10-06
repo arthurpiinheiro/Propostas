@@ -7,15 +7,19 @@
     <nav>
       <ul>
         <li>
-          <a href="#"> <span></span> Perfil</a>
+          <a routerLink="/peril" routerLinkActive="active">Perfil</a>
         </li>
         <li>
-          <a href="#">Propostas</a>
+          <a routerLink="/propostas" routerLinkActive="active">Propostas</a>
         </li>
         <li>
-          <a href="#">Contratos</a>
+          <a routerLink="/contratos" routerLinkActive="active">Contratos</a>
         </li>
       </ul>
     </nav>
   </header>
+
+  <div class="container-home-modules">
+    <router-outlet></router-outlet>
+  </div>
 </div>

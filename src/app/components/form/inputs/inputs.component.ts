@@ -6,17 +6,16 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./inputs.component.scss'],
   template: `
     <label for="{{label}}" class="label" [ngClass]="{'label-required': labelRequired}">{{label}}</label>
-    <md-form-field class="example-full-width group">
-      <input mdInput
+    <mat-form-field class="example-full-width group">
+      <input matInput
              id="{{id}}"
              placeholder="{{placeholder}}"
              maxlength="{{maxLength}}"
              type="{{types}}"
              [formControl]="control"/>
-    </md-form-field>
-  `
+    </mat-form-field>`
 })
-export class InputsComponent implements OnInit, AfterContentInit {
+export class InputsComponent implements OnInit, DoCheck {
   @Input() id: string;
   @Input() placeholder: string;
   @Input() maxLength: any;
@@ -31,7 +30,8 @@ export class InputsComponent implements OnInit, AfterContentInit {
   ngOnInit() {
   }
 
-  ngAfterContentInit() {
+  ngDoCheck() {
     this.labelRequired = this.control.hasError('required');
   }
+
 }
