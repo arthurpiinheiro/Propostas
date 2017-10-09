@@ -12,6 +12,8 @@ import {LoginModule} from './login/login.module';
 import {PropostaModule} from './proposta/proposta.module';
 import {ContratoModule} from './contrato/contrato.module';
 import {Ng2SelectizeModule} from 'ng2-selectize';
+import {LogoutModule} from './logout/logout.module';
+import {PerfilModule} from './perfil/perfil.module';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,12 @@ import {Ng2SelectizeModule} from 'ng2-selectize';
     LoginModule,
     PaginaNaoEncontradaModule,
     PropostaModule,
-    MatSelectModule,
     ContratoModule,
+    MatSelectModule,
     Ng2SelectizeModule,
-    MatTooltipModule
+    MatTooltipModule,
+    LogoutModule,
+    PerfilModule
   ],
   providers: [
     {

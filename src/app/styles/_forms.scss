@@ -60,3 +60,34 @@
 .mat-form-field-ripple {
   background-color: $color-success;
 }
+
+.btn-primary {
+  color: white;
+  background-color: $color-default;
+}
+
+.btn {
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 5px 7px;
+  i {
+    font-size: 15px;
+  }
+}
+
+.datatable-header {
+  background: #EDEDED;
+  display: flex !important;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.datatable-header-cell, .datatable-body-cell-label {
+  padding: 10px 20px;
+}
+
+.datatable-row-center {
+  border-bottom:  1px solid $color-border-default;
+}

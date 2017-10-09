@@ -109,7 +109,6 @@
             }
             &.active {
               color: white;
-              font-weight: 500;
             }
 
             &:hover {
@@ -140,11 +139,14 @@
       width: 100%;
       border-bottom: 1px solid $color-border-default;
       display: flex;
+      height: 80.5px;
 
       .page-title {
-        padding: 26.5px 32px;
-
         h2 {
+          height:100%;
+          display: flex;
+          align-items: center;
+          padding-left: 30px;
           font-size: 22px;
         }
         em {
@@ -179,15 +181,18 @@
         @extend .vertical-horizontal-align;
         padding: 0 30px;
         border-left: 1px solid $color-border-default;
-        a:visited {
+        a {
           color: $color-background-default;
-        }
-        .material-icons {
 
+          &:visited {
+            color: $color-background-default;
+          }
+          .material-icons {
+
+          }
         }
       }
     }
-
   }
 }
 

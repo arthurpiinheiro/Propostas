@@ -50,7 +50,8 @@ export class AppComponent implements OnInit, OnDestroy, OnChanges {
       }
     }
   };
-
+  idEmpresa: number;
+  idProduto: number;
 
   constructor(private authService: AuthService,
               private formBuilder: FormBuilder,
@@ -71,6 +72,8 @@ export class AppComponent implements OnInit, OnDestroy, OnChanges {
           this.currentTitle = event.children[0].routeConfig.data.title;
         }
       });
+    this.idEmpresa = this.formApp.get('empresa').value;
+    this.idProduto = this.formApp.get('produto').value;
   }
 
   createForm() {

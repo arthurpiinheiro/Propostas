@@ -1,1 +1,39 @@
-<h1>Component Proposta</h1>
+<div class="container-proposta container-padding">
+  <div class="form-group">
+    <h1>Lista de contratos</h1>
+    <p>Você pode utilizar o filtro para melhores resultados.</p>
+  </div>
+  <form [formGroup]="formFilterProposta" (ngSubmit)="updateFilter(formFilterProposta.value)">
+    <div class="form-group container-input-search">
+      <div class="input-form-search">
+        <app-inputs
+          [id]="'empresa'"
+          [label]="'empresa'"
+          [placeholder]="'Digite o nome da empresa'"
+          [maxLength]="20"
+          [types]="'text'"
+          [control]="formFilterProposta.get('empresa')">
+        </app-inputs>
+      </div>
+
+      <button class="btn btn-primary">
+        <i class="material-icons">&#xE8B6;</i>
+      </button>
+    </div>
+  </form>
+
+  <ngx-datatable
+    #table
+    class='material'
+    [columns]="columns"
+    [columnMode]="'force'"
+    [headerHeight]="40"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [limit]="10"
+    [rows]='rows'>
+    <ngx-datatable-column>
+
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>

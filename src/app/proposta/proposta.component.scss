@@ -1,0 +1,28 @@
+@import "../styles/variables";
+@import "../styles/default";
+@import "../styles/forms";
+@import "../styles/columns";
+
+.container-proposta {
+  h1 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+  }
+
+  .container-input-search {
+    display: flex;
+    align-items: center;
+  }
+
+  .input-form-search {
+    max-width: 350px;
+    width: 100%;
+    margin-right: 20px;
+  }
+}
