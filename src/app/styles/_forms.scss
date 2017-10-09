@@ -52,3 +52,11 @@
 .mat-option-text {
   padding: 0 20px;
 }
+
+.mat-focused .mat-form-field-placeholder {
+  color: $color-success;
+}
+
+.mat-form-field-ripple {
+  background-color: $color-success;
+}

@@ -4,6 +4,7 @@ import {LoginService} from './login.service';
 import 'rxjs/add/operator/takeUntil';
 import {Subject} from 'rxjs/Subject';
 import {Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(private formBuilder: FormBuilder,
               private loginService: LoginService,
-              private router: Router) {
+              private router: Router,
+              private titleService: Title) {
+    this.titleService.setTitle('Login');
   }
 
   ngOnInit() {

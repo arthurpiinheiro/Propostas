@@ -1,16 +1,5 @@
-<!--<div class="app-component">-->
-  <!--<div class="index" *ngIf="isLoggin">-->
-    <!--<nav>-->
-      <!--<a routerLink="/" routerLinkActive="active">Home</a>-->
-      <!--<a routerLink="/login" routerLinkActive="active">Login</a>-->
-      <!--<a routerLink="/proposta" routerLinkActive="active">proposta</a>-->
-    <!--</nav>-->
-  <!--</div>-->
-  <!--<router-outlet></router-outlet>-->
-<!--</div>-->
-
 <div class="container-home">
-  <header>
+  <header *ngIf="isLoggin">
     <div class="perfil">
       <div class="info-perfil">
         <h4>Arthur Adriano</h4>
@@ -20,59 +9,53 @@
            class="img-perfil"/>
     </div>
     <nav>
+      <div class="titleMenu">Empresas</div>
+      <div>
+        <ng2-selectize [config]="config"
+                       [formControl]="formApp.get('empresa')"
+                       [options]="companys">
+        </ng2-selectize>
+      </div>
+      <div class="titleMenu">Menu</div>
       <ul>
         <li>
-          <a routerLink="/peril" routerLinkActive="active">Perfil</a>
+          <a routerLink="/perfil" routerLinkActive="active">
+            <i class="material-icons">&#xE7FD;</i>
+            <span>Perfil</span>
+            <i class="material-icons">&#xE315;</i>
+          </a>
         </li>
         <li>
-          <a routerLink="/propostas" routerLinkActive="active">Propostas</a>
+          <a routerLink="/propostas" routerLinkActive="active">
+            <i class="material-icons">&#xE24D;</i>
+            <span>Propostas</span>
+            <i class="material-icons">&#xE315;</i>
+          </a>
         </li>
         <li>
-          <a routerLink="/contratos" routerLinkActive="active">Contratos</a>
+          <a routerLink="/contratos" routerLinkActive="active">
+            <i class="material-icons">&#xE873;</i>
+            <span>Contratos</span>
+            <i class="material-icons">&#xE315;</i>
+          </a>
         </li>
       </ul>
     </nav>
   </header>
 
   <div class="container-page">
-    <div class="page-header">
+    <div *ngIf="isLoggin" class="page-header">
       <div class="page-title">
-        <h2>Proposta</h2>
-        <em>Lorem ipsum dolor sit amet, consectetur</em>
+        <h2>{{ currentTitle }}</h2>
       </div>
-      <div class="btn-actions">
-        <div class="select-produtos">
-          <!--<mat-select #selectProd placeholder="Select">-->
-            <!--<mat-select-trigger>-->
-              <!--&lt;!&ndash;<div class="selected-value">&ndash;&gt;-->
-              <!--&lt;!&ndash;<span class="selected-value-icon">&lt;!&ndash;{{select.value?.icon}}&ndash;&gt; @</span>&ndash;&gt;-->
-              <!--&lt;!&ndash;<span class="selected-name">{{ select.value?.nome }}</span>&ndash;&gt;-->
-              <!--&lt;!&ndash;</div>&ndash;&gt;-->
-              <!--{{ selectProd.value?.nome }}-->
-            <!--</mat-select-trigger>-->
-            <!--<mat-option *ngFor="let product of products" [(ngModel)]="selectedProduct" [value]="product">-->
-              <!--<span>{{ product.nome }}</span>-->
-            <!--</mat-option>-->
-          <!--</mat-select>-->
-        </div>
-
-        <div class="select-empresas">
-          <!--<mat-select #selectComp placeholder="Select">-->
-            <!--<mat-select-trigger>-->
-              <!--&lt;!&ndash;<div class="selected-value">&ndash;&gt;-->
-              <!--&lt;!&ndash;<span class="selected-value-icon">&lt;!&ndash;{{select.value?.icon}}&ndash;&gt; @</span>&ndash;&gt;-->
-              <!--&lt;!&ndash;<span class="selected-name">{{ select.value?.nome }}</span>&ndash;&gt;-->
-              <!--&lt;!&ndash;</div>&ndash;&gt;-->
-              <!--{{ selectComp.value?.nome }}-->
-            <!--</mat-select-trigger>-->
-            <!--<mat-option *ngFor="let empresa of companys" [(ngModel)]="selectedCompany" [value]="empresa">-->
-              <!--<span>{{ empresa.nome }}</span>-->
-            <!--</mat-option>-->
-          <!--</mat-select>-->
-        </div>
+      <div class="btn-actions" *ngIf="formApp">
+        <ng2-selectize [config]="config"
+                       [formControl]="formApp.get('produto')"
+                       [options]="products">
+        </ng2-selectize>
       </div>
       <div class="logout">
-        <button>Logout</button>
+        <a href="/logout" matTooltip="Sair" matTooltipPosition="right"><i class="material-icons">&#xE879;</i></a>
       </div>
     </div>
     <router-outlet></router-outlet>

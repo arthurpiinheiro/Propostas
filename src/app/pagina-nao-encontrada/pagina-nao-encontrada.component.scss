@@ -1,0 +1,1 @@
+@import "../styles/default";@import "../styles/variables";.container-404 {  width: 100%;  height: calc(100% - 81px);  flex-direction: column;  img {    width: 100px;  }  h1{    text-transform: uppercase;    font-weight: 900;  }  h4{    text-transform: uppercase;    font-size: 14px;    color: $color-border-default;  }}
