@@ -12,13 +12,15 @@ export class PropostaComponent implements OnInit {
 
   rows = [];
   temp = [];
+  limit = 10;
+  offset = 0;
   columns = [
-    {name: 'Empresa'},
-    {name: 'Status'},
-    {name: 'Responsável'},
-    {name: 'Vigência'},
-    {name: 'Validade'},
-    {name: 'Prazo de pagamento'},
+    {name: 'empresa'},
+    {name: 'status'},
+    {name: 'responsavel'},
+    {name: 'vigencia'},
+    {name: 'validade'},
+    {name: 'prazoPagamento'},
     {name: 'actions'}
   ];
 
@@ -50,45 +52,113 @@ export class PropostaComponent implements OnInit {
   }
 
   fetch(cb) {
-    // this.rows = [
-    //   {
-    //     empresa: 'Company',
-    //     status: 'Teste',
-    //     responsavel: 'Teste',
-    //     vigencia: '',
-    //     validade: '',
-    //     prazoPagamento: ''
-    //   },
-    //   {
-    //     empresa: 'Company',
-    //     status: 'Teste',
-    //     responsavel: 'Teste',
-    //     vigencia: '',
-    //     validade: '',
-    //     prazoPagamento: ''
-    //   },
-    //   {
-    //     empresa: 'Company',
-    //     status: 'Teste',
-    //     responsavel: 'Teste',
-    //     vigencia: '',
-    //     validade: '',
-    //     prazoPagamento: ''
-    //   }
-    // ];
+    this.rows = [
+      {
+        empresa: 'teste empresa',
+        status: 'teste status',
+        responsavel: 'teste responsavel',
+        vigencia: 'teste vigencia',
+        validade: 'teste validade',
+        prazoPagamento: 'teste prazoPagamento',
+        actions: ''
+      },
+      {
+        empresa: 'teste empresa',
+        status: 'teste status',
+        responsavel: 'teste responsavel',
+        vigencia: 'teste vigencia',
+        validade: 'teste validade',
+        prazoPagamento: 'teste prazoPagamento',
+        actions: ''
+      },
+      {
+        empresa: 'teste empresa',
+        status: 'teste status',
+        responsavel: 'teste responsavel',
+        vigencia: 'teste vigencia',
+        validade: 'teste validade',
+        prazoPagamento: 'teste prazoPagamento',
+        actions: ''
+      },
+      {
+        empresa: 'teste empresa',
+        status: 'teste status',
+        responsavel: 'teste responsavel',
+        vigencia: 'teste vigencia',
+        validade: 'teste validade',
+        prazoPagamento: 'teste prazoPagamento',
+        actions: ''
+      },
+      {
+        empresa: 'teste empresa',
+        status: 'teste status',
+        responsavel: 'teste responsavel',
+        vigencia: 'teste vigencia',
+        validade: 'teste validade',
+        prazoPagamento: 'teste prazoPagamento',
+        actions: ''
+      },
+      {
+        empresa: 'teste empresa',
+        status: 'teste status',
+        responsavel: 'teste responsavel',
+        vigencia: 'teste vigencia',
+        validade: 'teste validade',
+        prazoPagamento: 'teste prazoPagamento',
+        actions: ''
+      },
+      {
+        empresa: 'teste empresa',
+        status: 'teste status',
+        responsavel: 'teste responsavel',
+        vigencia: 'teste vigencia',
+        validade: 'teste validade',
+        prazoPagamento: 'teste prazoPagamento',
+        actions: ''
+      },
+      {
+        empresa: 'teste empresa',
+        status: 'teste status',
+        responsavel: 'teste responsavel',
+        vigencia: 'teste vigencia',
+        validade: 'teste validade',
+        prazoPagamento: 'teste prazoPagamento',
+        actions: ''
+      },
+      {
+        empresa: 'teste empresa',
+        status: 'teste status',
+        responsavel: 'teste responsavel',
+        vigencia: 'teste vigencia',
+        validade: 'teste validade',
+        prazoPagamento: 'teste prazoPagamento',
+        actions: ''
+      },
+      {
+        empresa: 'teste empresa',
+        status: 'teste status',
+        responsavel: 'teste responsavel',
+        vigencia: 'teste vigencia',
+        validade: 'teste validade',
+        prazoPagamento: 'teste prazoPagamento',
+        actions: ''
+      },
+      {
+        empresa: 'teste empresa',
+        status: 'teste status',
+        responsavel: 'teste responsavel',
+        vigencia: 'teste vigencia',
+        validade: 'teste validade',
+        prazoPagamento: 'teste prazoPagamento',
+        actions: ''
+      }
+    ];
+  }
+
+  setPage() {
   }
 
   updateFilter(event) {
-    // const val = event.target.value.toLowerCase();
-
-    // filter our data
-    // const temp = this.temp.filter(function (d) {
-    //   return d.name.toLowerCase().indexOf(val) !== -1 || !val;
-    // });
-
-    // update the rows
     this.rows = [];
-    // Whenever the filter changes, always go back to the first page
-    this.table.offset = 0;
   }
 }

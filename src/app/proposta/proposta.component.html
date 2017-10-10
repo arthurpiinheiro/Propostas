@@ -24,16 +24,69 @@
 
   <ngx-datatable
     #table
-    class='material'
+    class='tabela-proposta'
     [columns]="columns"
     [columnMode]="'force'"
     [headerHeight]="40"
     [footerHeight]="50"
     [rowHeight]="'auto'"
-    [limit]="10"
-    [rows]='rows'>
-    <ngx-datatable-column>
+    [rows]='rows'
+    [limit]="limit"
+    [offset]="offset"
+    (page)='setPage($event)'>
 
+    <ngx-datatable-column name="empresa">
+      <ng-template let-column="column" ngx-datatable-header-template>Empresa</ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
     </ngx-datatable-column>
+
+    <ngx-datatable-column name="status">
+      <ng-template let-column="column" ngx-datatable-header-template>Status</ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <span class="table-status"
+              [ngClass]="{'status-aprovado': value === 'aprovado', 'status-negado': value === 'negado'}">{{value}}</span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="responsavel">
+      <ng-template let-column="column" ngx-datatable-header-template>Responsável</ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="vigencia">
+      <ng-template let-column="column" ngx-datatable-header-template>Vigência</ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="validade">
+      <ng-template let-column="column" ngx-datatable-header-template>Validade</ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="prazoPagamento">
+      <ng-template let-column="column" ngx-datatable-header-template>Prazo de Pagamento</ng-template>
+      <ng-template let-value="value" class="teste" ngx-datatable-cell-template>{{value}}</ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="actions">
+      <ng-template let-column="column" ngx-datatable-header-template></ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <button>Editar</button>
+      </ng-template>
+    </ngx-datatable-column>
+
+
+    <ngx-datatable-footer>
+      <ng-template
+        ngx-datatable-footer-template
+        let-rowCount="rowCount"
+        let-pageSize="pageSize"
+        let-selectedCount="selectedCount"
+        let-curPage="curPage"
+        let-offset="offset">
+        <div>1 à {{rowCount <= 10 ? rowCount : '10'}} de {{rowCount}} Registros.</div>
+      </ng-template>
+    </ngx-datatable-footer>
+
   </ngx-datatable>
 </div>
