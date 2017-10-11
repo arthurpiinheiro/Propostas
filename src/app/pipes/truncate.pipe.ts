@@ -1,0 +1,1 @@
+import {Pipe, PipeTransform} from '@angular/core';@Pipe({name: 'truncate'})export class TruncatePipe implements PipeTransform {  transform(value: string, count: number) {    if (value) {      count = (count) ? count : 13;      return (value.length > count + 3) ? value.substring(0, count) + '...' : value;    }  }}

@@ -54,102 +54,12 @@ export class PropostaComponent implements OnInit {
   fetch(cb) {
     this.rows = [
       {
-        empresa: 'teste empresa',
-        status: 'teste status',
-        responsavel: 'teste responsavel',
-        vigencia: 'teste vigencia',
-        validade: 'teste validade',
-        prazoPagamento: 'teste prazoPagamento',
-        actions: ''
-      },
-      {
-        empresa: 'teste empresa',
-        status: 'teste status',
-        responsavel: 'teste responsavel',
-        vigencia: 'teste vigencia',
-        validade: 'teste validade',
-        prazoPagamento: 'teste prazoPagamento',
-        actions: ''
-      },
-      {
-        empresa: 'teste empresa',
-        status: 'teste status',
-        responsavel: 'teste responsavel',
-        vigencia: 'teste vigencia',
-        validade: 'teste validade',
-        prazoPagamento: 'teste prazoPagamento',
-        actions: ''
-      },
-      {
-        empresa: 'teste empresa',
-        status: 'teste status',
-        responsavel: 'teste responsavel',
-        vigencia: 'teste vigencia',
-        validade: 'teste validade',
-        prazoPagamento: 'teste prazoPagamento',
-        actions: ''
-      },
-      {
-        empresa: 'teste empresa',
-        status: 'teste status',
-        responsavel: 'teste responsavel',
-        vigencia: 'teste vigencia',
-        validade: 'teste validade',
-        prazoPagamento: 'teste prazoPagamento',
-        actions: ''
-      },
-      {
-        empresa: 'teste empresa',
-        status: 'teste status',
-        responsavel: 'teste responsavel',
-        vigencia: 'teste vigencia',
-        validade: 'teste validade',
-        prazoPagamento: 'teste prazoPagamento',
-        actions: ''
-      },
-      {
-        empresa: 'teste empresa',
-        status: 'teste status',
-        responsavel: 'teste responsavel',
-        vigencia: 'teste vigencia',
-        validade: 'teste validade',
-        prazoPagamento: 'teste prazoPagamento',
-        actions: ''
-      },
-      {
-        empresa: 'teste empresa',
-        status: 'teste status',
-        responsavel: 'teste responsavel',
-        vigencia: 'teste vigencia',
-        validade: 'teste validade',
-        prazoPagamento: 'teste prazoPagamento',
-        actions: ''
-      },
-      {
-        empresa: 'teste empresa',
-        status: 'teste status',
-        responsavel: 'teste responsavel',
-        vigencia: 'teste vigencia',
-        validade: 'teste validade',
-        prazoPagamento: 'teste prazoPagamento',
-        actions: ''
-      },
-      {
-        empresa: 'teste empresa',
-        status: 'teste status',
-        responsavel: 'teste responsavel',
-        vigencia: 'teste vigencia',
-        validade: 'teste validade',
-        prazoPagamento: 'teste prazoPagamento',
-        actions: ''
-      },
-      {
-        empresa: 'teste empresa',
-        status: 'teste status',
-        responsavel: 'teste responsavel',
-        vigencia: 'teste vigencia',
-        validade: 'teste validade',
-        prazoPagamento: 'teste prazoPagamento',
+        empresa: 'Guarda Municipal do Rio de Janeiro',
+        status: 'Negociação',
+        responsavel: 'Arthur Adriano',
+        vigencia: '20/01/2017',
+        validade: '20/01/2018',
+        prazoPagamento: '10/01/2017',
         actions: ''
       }
     ];

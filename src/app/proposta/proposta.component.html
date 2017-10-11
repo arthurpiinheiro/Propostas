@@ -37,7 +37,9 @@
 
     <ngx-datatable-column name="empresa">
       <ng-template let-column="column" ngx-datatable-header-template>Empresa</ng-template>
-      <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <span matTooltip="{{value}}" matTooltipPosition="above">{{value | truncate: 25}}</span>
+      </ng-template>
     </ngx-datatable-column>
 
     <ngx-datatable-column name="status">
@@ -84,8 +86,24 @@
         let-selectedCount="selectedCount"
         let-curPage="curPage"
         let-offset="offset">
-        <div>1 à {{rowCount <= 10 ? rowCount : '10'}} de {{rowCount}} Registros.</div>
+        <datatable-pager
+          [page]="0"
+          [size]="pageSize"
+          [count]="rowCount"
+          [limit]="limit"
+          [hidden]="!((rowCount / pageSize) > 1)"
+          [pagerLeftArrowIcon]="'datatable-icon-left'"
+          [pagerRightArrowIcon]="'datatable-icon-right'"
+          [pagerPreviousIcon]="'datatable-icon-prev'"
+          [pagerNextIcon]="'datatable-icon-skip'"
+          (change)="table.onFooterPage($event)">
+        </datatable-pager>
+        <div>
+          1 à {{rowCount <= 10 ? rowCount : '10'}} de {{rowCount}} Registros.
+        </div>
+
       </ng-template>
+
     </ngx-datatable-footer>
 
   </ngx-datatable>

@@ -89,5 +89,30 @@
 }
 
 .datatable-row-center {
-  border-bottom:  1px solid $color-border-default;
+  border-bottom: 1px solid $color-border-default;
 }
+
+.datatable-icon-left:after {
+  content: "<";
+  display: inherit;
+}
+
+.datatable-icon-right:after {
+  content: ">";
+  display: inherit;
+}
+
+.datatable-icon-prev:after {
+  content: "<<";
+  display: inherit;
+}
+
+.datatable-icon-skip:after {
+  content: ">>";
+  display: inherit;
+}
+
+//[pagerLeftArrowIcon]="'datatable-icon-left'"
+//[pagerRightArrowIcon]="'datatable-icon-right'"
+//[pagerPreviousIcon]="'datatable-icon-prev'"
+//[pagerNextIcon]="'datatable-icon-skip'"

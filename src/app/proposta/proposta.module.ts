@@ -6,13 +6,17 @@ import {NewPropostaComponent} from './new-proposta/new-proposta.component';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ComponentsModule} from '../components/components.module';
+import {PipeModule} from '../pipes/pipe.module';
+import {MatTooltipModule} from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     NgxDatatableModule,
     ReactiveFormsModule,
-    ComponentsModule
+    ComponentsModule,
+    PipeModule,
+    MatTooltipModule
   ],
   declarations: [
     PropostaComponent,
